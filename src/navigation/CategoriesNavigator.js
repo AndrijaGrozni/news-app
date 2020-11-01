@@ -1,10 +1,26 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+// screens
+import CategoriesScreen from '../screens/Categories/Categories';
+import Category from '../screens/Category/Category';
 
-export default function TopNewsNavigator() {
+const CategoriesStack = createStackNavigator();
+
+const CategoriesNavigator = () => {
 	return (
-		<View>
-			<Text>Categories</Text>
-		</View>
+		<CategoriesStack.Navigator>
+			<CategoriesStack.Screen
+				name="Categories"
+				component={CategoriesScreen}
+				options={{ headerShown: false }}
+			/>
+			<CategoriesStack.Screen
+				name="Category"
+				component={Category}
+				options={{ headerShown: false }}
+			/>
+		</CategoriesStack.Navigator>
 	);
-}
+};
+
+export default CategoriesNavigator;
