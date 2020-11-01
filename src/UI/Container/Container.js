@@ -13,6 +13,7 @@ const Container = ({
 			showsVerticalScrollIndicator={showsVerticalScrollIndicator}
 			contentContainerStyle={contentContainerStyle}
 			scrollEnabled={isScroll}
+			bounces={false}
 		>
 			{children}
 		</ScrollView>
@@ -28,7 +29,11 @@ Container.propTypes = {
 
 Container.defaultProps = {
 	showsVerticalScrollIndicator: false,
-	contentContainerStyle: { padding: '5% 0% 15% 0%' },
+	contentContainerStyle: {
+		padding: '5% 0% 15% 0%',
+		backgroundColor: 'white',
+		flex: 1
+	},
 	isScroll: true
 };
 

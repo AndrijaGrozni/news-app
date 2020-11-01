@@ -1,18 +1,27 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
+import Wrapper from '../../UI/Wrapper/Wrapper';
 import Container from '../../UI/Container/Container';
+import Header from '../../components/Header/Header';
 
 const SingleCategory = ({ navigation }) => {
 	return (
-		<Container>
-			<View>
-				<Text>Single Category list</Text>
-				<Button
-					title="Go to Single News"
-					onPress={() => navigation.navigate('Single News')}
-				/>
-			</View>
-		</Container>
+		<Wrapper>
+			<Header
+				title="Category"
+				button
+				onPress={() => navigation.goBack()}
+			/>
+			<Container>
+				<View>
+					<Text>Category page</Text>
+					<Button
+						title="Go to Single Category"
+						onPress={() => navigation.navigate('Category')}
+					/>
+				</View>
+			</Container>
+		</Wrapper>
 	);
 };
 

@@ -1,14 +1,23 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Button } from 'react-native';
+import Wrapper from '../../UI/Wrapper/Wrapper';
 import Container from '../../UI/Container/Container';
+import Header from '../../components/Header/Header';
 
-const Search = () => {
+const Search = ({ navigation }) => {
 	return (
-		<Container>
-			<View>
-				<Text>Top news page</Text>
-			</View>
-		</Container>
+		<Wrapper>
+			<Header title="Search" backgroundColor="#fff" />
+			<Container>
+				<View>
+					<Text>Search</Text>
+					<Button
+						title="Go to Single News"
+						onPress={() => navigation.navigate('Single News')}
+					/>
+				</View>
+			</Container>
+		</Wrapper>
 	);
 };
 
