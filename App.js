@@ -1,11 +1,12 @@
 import React from 'react';
-import { SafeAreaView, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import MainNavigator from './src/navigation/MainNavigator';
 
 const App = () => {
 	return (
-		<SafeAreaView>
-			<Text>Hello World</Text>
-		</SafeAreaView>
+		<NavigationContainer>
+			<MainNavigator />
+		</NavigationContainer>
 	);
 };
 

@@ -8,11 +8,14 @@
 		"start": "react-native start",
 		"test": "jest",
 		"lint": "eslint src -c .eslintrc --ext js,jsx",
-		"eslint-check": "eslint --print-config ./.eslintrc | eslint-config-prettier-check"
+		"eslint-check": "eslint --print-config ./.eslintrc | eslint-config-prettier-check",
+		"format": "prettier --check ./src"
 	},
 	"dependencies": {
 		"@react-native-community/masked-view": "^0.1.10",
-		"prettier": "^2.1.2",
+		"@react-navigation/bottom-tabs": "^5.10.2",
+		"@react-navigation/native": "^5.8.2",
+		"@react-navigation/stack": "^5.11.1",
 		"prop-types": "^15.7.2",
 		"react": "16.13.1",
 		"react-intl": "^5.8.8",
@@ -35,9 +38,11 @@
 		"eslint-config-prettier": "^6.10.0",
 		"eslint-plugin-import": "^2.20.1",
 		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-prettier": "^3.1.4",
 		"eslint-plugin-react": "^7.18.3",
 		"jest": "^25.1.0",
 		"metro-react-native-babel-preset": "^0.59.0",
+		"prettier": "2.1.2",
 		"react-test-renderer": "16.13.1"
 	},
 	"eslintConfig": {
