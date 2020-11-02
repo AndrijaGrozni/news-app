@@ -17,7 +17,7 @@ const SingleCategory = ({ navigation }) => {
 					<Text>Category page</Text>
 					<Button
 						title="Go to Single Category"
-						onPress={() => navigation.navigate('Category')}
+						onPress={() => navigation.navigate('TopNews')}
 					/>
 				</View>
 			</Container>

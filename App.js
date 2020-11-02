@@ -1,12 +1,16 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import MainNavigator from './src/navigation/MainNavigator';
+import { ThemeProvider } from 'styled-components';
+import MainNavigator from './src/navigation/HomeNavigator';
+import { theme } from './src/settings/theme/theme';
 
 const App = () => {
 	return (
-		<NavigationContainer>
-			<MainNavigator />
-		</NavigationContainer>
+		<ThemeProvider theme={theme}>
+			<NavigationContainer>
+				<MainNavigator />
+			</NavigationContainer>
+		</ThemeProvider>
 	);
 };
 

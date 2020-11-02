@@ -27,7 +27,7 @@ $ sudo gem install cocoapods
 ## Installation
 
 ```
-$ git clone https://github.com/AndrijaGrozni/NewsApp.git
+$ git clone https://github.com/AndrijaGrozni/news-app.git
 ```
 
 ```
