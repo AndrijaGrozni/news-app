@@ -1,22 +1,25 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { Text } from 'react-native';
 import Wrapper from '../../UI/Wrapper/Wrapper';
-import Container from '../../UI/Container/Container';
 import Header from '../../components/Header/Header';
+import CardGrid from '../../UI/CardGrid/CardGrid';
+import useTopNews from '../../hooks/useTopNews';
+import * as S from './styles';
 
-const TopNews = ({ navigation }) => {
+const TopNews = () => {
+	const { status, data, error, isFetching } = useTopNews('us');
+
 	return (
 		<Wrapper>
 			<Header title="Top News" />
-			<Container>
-				<View>
-					<Text>Top news page</Text>
-					<Button
-						title="Go to Single News"
-						onPress={() => navigation.navigate('Single News')}
-					/>
-				</View>
-			</Container>
+			<S.Headline size={2}>Top news from US</S.Headline>
+			{status === 'loading' || isFetching ? (
+				<Text>Loading...</Text>
+			) : status === 'error' ? (
+				<Text>Error: {error}</Text>
+			) : (
+				<CardGrid news={data.articles} />
+			)}
 		</Wrapper>
 	);
 };

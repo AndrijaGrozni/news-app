@@ -32,7 +32,7 @@ Container.defaultProps = {
 	contentContainerStyle: {
 		padding: '5% 0% 15% 0%',
 		backgroundColor: 'white',
-		flex: 1
+		minHeight: '100%'
 	},
 	isScroll: true
 };

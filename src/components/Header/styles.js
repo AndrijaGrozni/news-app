@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components/native';
+import styled from 'styled-components/native';
 import H from '../../UI/Heading/Heading';
 
 export const Header = styled.View`

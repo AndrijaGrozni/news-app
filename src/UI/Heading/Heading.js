@@ -2,13 +2,13 @@ import styled, { css } from 'styled-components/native';
 import PropTypes from 'prop-types';
 
 const fontSizes = {
-	1: 26,
-	2: 20,
-	3: 16
+	1: 22,
+	2: 16,
+	3: 12
 };
 
 const Heading = styled.Text`
-	color: ${({ color }) => color};
+	color: ${({ theme }) => theme.textSecondary};
 	font-size: ${({ size }) => `${fontSizes[size]}px`};
 	text-align: ${({ textAlign }) => textAlign};
 	font-weight: bold;
