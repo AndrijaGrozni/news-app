@@ -21,10 +21,10 @@ export const CardInner = styled.View`
 `;
 
 export const CardTitle = styled(Heading)`
-	padding: ${(props) => (!props.fullWidth ? 10 : 15)}px;
+	padding: ${(props) => (!props.fullWidth ? 15 : 12)}px;
 	color: ${({ theme }) => theme.textSecondary};
-	background-color: black;
-	text-align: ${(props) => (!props.fullWidth ? 'center' : 'left')};
+	background-color: ${({ theme }) => theme.brandDark};
+	text-align: ${(props) => (!props.fullWidth ? 'left' : 'center')};
 	border-radius: 10px;
 `;
 
@@ -32,12 +32,12 @@ export const CardDescription = styled(Paragraph)`
 	margin: 0 auto;
 	padding: 10px 10px 0 10px;
 	overflow: hidden;
-	text-align: ${(props) => (!props.fullWidth ? 'center' : 'left')};
+	text-align: ${(props) => (!props.fullWidth ? 'left' : 'center')};
 `;
 
 export const Thumbnail = styled.Image`
 	width: 100%;
-	height: ${(props) => (!props.fullWidth ? 100 : 150)}px;
+	height: ${(props) => (!props.fullWidth ? 150 : 100)}px;
 `;
 
 export const CardButton = styled(Button)`

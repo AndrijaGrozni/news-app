@@ -14,7 +14,7 @@ const Header = ({ title, customTitle, onPress }) => {
 					<S.BackText>Back</S.BackText>
 				</S.BackButton>
 			)}
-			<S.SubHeading size={3} textAlign="center" isSubheading>
+			<S.SubHeading size={2} textAlign="center" isSubheading>
 				{title && <Text>{title}</Text>}
 				{customTitle}
 			</S.SubHeading>

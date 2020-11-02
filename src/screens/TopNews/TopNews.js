@@ -11,7 +11,7 @@ const TopNews = () => {
 
 	return (
 		<Wrapper>
-			<Header title="Top News" />
+			<Header title="News App" />
 			<S.Headline size={2}>Top news from US</S.Headline>
 			{status === 'loading' || isFetching ? (
 				<Text>Loading...</Text>

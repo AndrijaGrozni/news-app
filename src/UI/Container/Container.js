@@ -6,7 +6,8 @@ const Container = ({
 	children,
 	showsVerticalScrollIndicator,
 	contentContainerStyle,
-	isScroll
+	isScroll,
+	noPadding
 }) => {
 	return (
 		<ScrollView
@@ -14,6 +15,7 @@ const Container = ({
 			contentContainerStyle={contentContainerStyle}
 			scrollEnabled={isScroll}
 			bounces={false}
+			noPadding={noPadding}
 		>
 			{children}
 		</ScrollView>
