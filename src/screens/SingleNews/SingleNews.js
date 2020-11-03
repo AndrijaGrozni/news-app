@@ -11,7 +11,11 @@ const SingleNews = ({ route, navigation }) => {
 
 	return (
 		<Wrapper>
-			<Header title={source?.name} onPress={() => navigation.goBack()} />
+			<Header
+				title={source?.name}
+				onPress={() => navigation.goBack()}
+				dropdownDisabled={true}
+			/>
 			<S.Headline size={1}>{title}</S.Headline>
 			<Container contentContainerStyle={contentContainerStyleOverride}>
 				{urlToImage && (

@@ -11,3 +11,7 @@ export const Headline = styled(Heading)`
 	z-index: 2;
 	text-align: center;
 `;
+
+export const Span = styled.Text`
+	text-transform: uppercase;
+`;

@@ -7,6 +7,7 @@ export const Header = styled.View`
 	position: relative;
 	margin-bottom: 20px;
 	padding: 5px 0 0 0;
+	z-index: 10;
 `;
 
 export const SubHeading = styled(H)`

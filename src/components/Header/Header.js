@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Text } from 'react-native';
 import Icon from '../../UI/Icon/Icon';
+import Dropdown from '../../UI/Dropdown/Dropdown';
 import { backArrow } from '../../settings/images';
+import { AppContext, AppDispatchContext } from '../../context/AppProvider';
 import * as S from './styles';
 
-const Header = ({ title, customTitle, onPress }) => {
+const Header = ({ title, customTitle, onPress, dropdownDisabled }) => {
+	const locale = useContext(AppContext);
+	const switchCountry = useContext(AppDispatchContext);
+
 	return (
 		<S.Header>
 			{onPress && (
@@ -18,18 +23,27 @@ const Header = ({ title, customTitle, onPress }) => {
 				{title && <Text>{title}</Text>}
 				{customTitle}
 			</S.SubHeading>
+			{!dropdownDisabled && (
+				<Dropdown
+					items={locale.countries}
+					defaultValue={locale.country}
+					onChangeItem={(item) => switchCountry(item)}
+				/>
+			)}
 		</S.Header>
 	);
 };
 
 Header.propTypes = {
 	title: PropTypes.string,
-	customTitle: PropTypes.string
+	customTitle: PropTypes.string,
+	dropdownDisabled: PropTypes.bool
 };
 
 Header.defaultProps = {
 	title: null,
-	customTitle: null
+	customTitle: null,
+	dropdownDisabled: false
 };
 
 export default Header;
