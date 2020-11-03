@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Text } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import * as navigation from '../../navigation/RootNavigation';
 import Slider from '../../UI/Slider/Slider';
 import Card from '../../UI/Card/Card';
@@ -16,7 +17,16 @@ const CardSlider = ({ country, category }) => {
 
 	return (
 		<S.SlidderOutter>
-			<S.Headline size={1}>{category}</S.Headline>
+			<TouchableOpacity
+				onPress={() =>
+					navigation.navigate('Category', {
+						category
+					})
+				}
+			>
+				<S.Headline size={1}>{category}</S.Headline>
+			</TouchableOpacity>
+
 			{status === 'loading' || isFetching ? (
 				<Text>Loading...</Text>
 			) : status === 'error' ? (
@@ -45,12 +55,12 @@ const CardSlider = ({ country, category }) => {
 };
 
 CardSlider.propTypes = {
-	news: PropTypes.array,
+	country: PropTypes.string,
 	category: PropTypes.string
 };
 
 CardSlider.defaultProps = {
-	news: [],
+	country: 'us',
 	category: 'Category name'
 };
 

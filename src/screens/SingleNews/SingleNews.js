@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Wrapper from '../../UI/Wrapper/Wrapper';
 import Header from '../../components/Header/Header';
 import Container from '../../UI/Container/Container';
@@ -38,9 +39,9 @@ const SingleNews = ({ route, navigation }) => {
 	);
 };
 
-SingleNews.propTypes = {};
-
-SingleNews.defaultProps = {};
+SingleNews.propTypes = {
+	route: PropTypes.object.isRequired
+};
 
 export default SingleNews;
 
