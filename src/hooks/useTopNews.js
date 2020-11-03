@@ -10,5 +10,5 @@ const getTopNews = async (_, country) => {
 };
 
 export default function usePosts(country) {
-	return useQuery(['topNews', country], getTopNews);
+	return useQuery(['getTopNews', country], getTopNews);
 }

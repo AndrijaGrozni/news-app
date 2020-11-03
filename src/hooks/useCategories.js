@@ -11,5 +11,5 @@ const getCategories = async (_, country, category, limit) => {
 };
 
 export default function usePosts(country, category, limit) {
-	return useQuery(['topNews', country, category, limit], getCategories);
+	return useQuery(['getCategories', country, category, limit], getCategories);
 }
