@@ -31,7 +31,7 @@ const Button = ({
 };
 
 Button.propTypes = {
-	title: PropTypes.string.isRequired,
+	title: PropTypes.string,
 	onPress: PropTypes.any,
 	primary: PropTypes.bool,
 	secondary: PropTypes.bool,
@@ -41,6 +41,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+	title: '',
 	onPress: () => {},
 	primary: true,
 	secondary: false,

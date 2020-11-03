@@ -16,7 +16,6 @@ const SingleNews = ({ route, navigation }) => {
 				onPress={() => navigation.goBack()}
 				dropdownDisabled={true}
 			/>
-			<S.Headline size={1}>{title}</S.Headline>
 			<Container contentContainerStyle={contentContainerStyleOverride}>
 				{urlToImage && (
 					<S.Cover
@@ -29,6 +28,7 @@ const SingleNews = ({ route, navigation }) => {
 						}}
 					/>
 				)}
+				<S.Headline size={1}>{title}</S.Headline>
 				<S.ContentInner>
 					<Paragraph>{description}</Paragraph>
 					<Paragraph>{content}</Paragraph>

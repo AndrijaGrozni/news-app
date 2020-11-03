@@ -4,20 +4,28 @@ const AppContext = createContext(undefined);
 const AppDispatchContext = createContext(undefined);
 
 const AppProvider = ({ children }) => {
-	const [locale, setLocale] = useState({
+	const [state, setState] = useState({
 		country: 'us',
 		countries: [
 			{ label: 'GB', value: 'gb', icon: null },
 			{ label: 'US', value: 'us', icon: null }
+		],
+		categories: [
+			{ label: 'General', value: 'general' },
+			{ label: 'Entertainment', value: 'entertainment' },
+			{ label: 'Health', value: 'health' },
+			{ label: 'Science', value: 'science' },
+			{ label: 'Sport', value: 'sport' },
+			{ label: 'Technology', value: 'technology' }
 		]
 	});
 
 	const countrySwitch = (value) => {
-		setLocale({ ...locale, country: value });
+		setState({ ...state, country: value });
 	};
 
 	return (
-		<AppContext.Provider value={locale}>
+		<AppContext.Provider value={state}>
 			<AppDispatchContext.Provider value={countrySwitch}>
 				{children}
 			</AppDispatchContext.Provider>

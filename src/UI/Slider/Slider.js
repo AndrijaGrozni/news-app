@@ -20,6 +20,7 @@ const Slider = ({ cards, renderCards }) => {
 				useScrollView={true}
 				inactiveSlideShift={0}
 				renderItem={renderCards}
+				loop={true}
 			/>
 		</View>
 	);

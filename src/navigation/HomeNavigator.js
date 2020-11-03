@@ -39,7 +39,7 @@ const HomeNavigator = () => {
 				activeTintColor: '#4BD195',
 				inactiveTintColor: 'white',
 				style: {
-					backgroundColor: '#003049',
+					backgroundColor: '#000',
 					borderTopWidth: 0,
 					paddingTop: 10
 				}

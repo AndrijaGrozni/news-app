@@ -14,8 +14,7 @@ const Card = ({
 	return (
 		<S.Card width={width} height={height} fullWidth={fullWidth}>
 			<S.CardInner>
-				<S.CardTitle size={3}>{title}</S.CardTitle>
-				{image && (
+				{image !== '' && (
 					<S.Thumbnail
 						resizeMode="cover"
 						source={{
@@ -26,8 +25,13 @@ const Card = ({
 						}}
 					/>
 				)}
+				<S.CardTitle size={3} numberOfLines={3}>
+					{title}
+				</S.CardTitle>
 				{description !== '' && (
-					<S.CardDescription small>{description}</S.CardDescription>
+					<S.CardDescription medium numberOfLines={3}>
+						{description}
+					</S.CardDescription>
 				)}
 				<S.CardButton
 					title="Read more  >"

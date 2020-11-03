@@ -7,8 +7,9 @@ import { backArrow } from '../../settings/images';
 import { AppContext, AppDispatchContext } from '../../context/AppProvider';
 import * as S from './styles';
 
-const Header = ({ title, customTitle, onPress, dropdownDisabled }) => {
-	const locale = useContext(AppContext);
+const Header = ({ title, onPress, dropdownDisabled }) => {
+	const state = useContext(AppContext);
+	const { country, countries } = state;
 	const switchCountry = useContext(AppDispatchContext);
 
 	return (
@@ -16,17 +17,15 @@ const Header = ({ title, customTitle, onPress, dropdownDisabled }) => {
 			{onPress && (
 				<S.BackButton onPress={onPress}>
 					<Icon source={backArrow} size={20} />
-					<S.BackText>Back</S.BackText>
 				</S.BackButton>
 			)}
 			<S.SubHeading size={2} textAlign="center" isSubheading>
 				{title && <Text>{title}</Text>}
-				{customTitle}
 			</S.SubHeading>
 			{!dropdownDisabled && (
 				<Dropdown
-					items={locale.countries}
-					defaultValue={locale.country}
+					items={countries}
+					defaultValue={country}
 					onChangeItem={(item) => switchCountry(item)}
 				/>
 			)}
@@ -36,13 +35,11 @@ const Header = ({ title, customTitle, onPress, dropdownDisabled }) => {
 
 Header.propTypes = {
 	title: PropTypes.string,
-	customTitle: PropTypes.string,
 	dropdownDisabled: PropTypes.bool
 };
 
 Header.defaultProps = {
 	title: null,
-	customTitle: null,
 	dropdownDisabled: false
 };
 

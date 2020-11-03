@@ -6,6 +6,7 @@ import Button from '../Button/Button';
 export const Card = styled.View`
 	width: ${(props) => (!props.fullWidth ? 47 : 100)}%;
 	height: auto;
+	min-height: ${(props) => (!props.fullWidth ? 2 : 280)}px;
 	background-color: ${({ theme }) => theme.brandLight};
 	border-radius: 10px;
 	padding: 0;
@@ -37,6 +38,7 @@ export const CardDescription = styled(Paragraph)`
 
 export const Thumbnail = styled.Image`
 	width: 100%;
+	background-color: #eff1f3;
 	height: ${(props) => (!props.fullWidth ? 150 : 100)}px;
 `;
 
@@ -44,4 +46,5 @@ export const CardButton = styled(Button)`
 	width: 100%;
 	padding: ${(props) => (!props.fullWidth ? 10 : 12)}px;
 	margin-bottom: 2px;
+	margin-top: auto;
 `;
