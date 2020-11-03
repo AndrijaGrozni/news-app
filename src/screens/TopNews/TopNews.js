@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Text } from 'react-native';
 import Wrapper from '../../UI/Wrapper/Wrapper';
 import Header from '../../components/Header/Header';
-import CardGrid from '../../UI/CardGrid/CardGrid';
+import CardGrid from '../../components/CardGrid/CardGrid';
 import useTopNews from '../../hooks/useTopNews';
 import { AppContext } from '../../context/AppProvider';
 import * as S from './styles';
