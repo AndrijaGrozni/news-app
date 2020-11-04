@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { Text } from 'react-native';
 import Wrapper from '../../UI/Wrapper/Wrapper';
 import Header from '../../components/Header/Header';
 import CardGrid from '../../components/CardGrid/CardGrid';
+import Loading from '../../UI/Loading/Loading';
+import Error from '../../UI/Error/Error';
 import useCategory from '../../hooks/useCategory';
 import { AppContext } from '../../context/AppProvider';
 import * as S from './styles';
@@ -13,7 +14,7 @@ const Category = ({ route, navigation }) => {
 	const { category } = params;
 	const state = useContext(AppContext);
 	const { country } = state;
-	const { status, data, error, isFetching } = useCategory(country, category);
+	const { status, data, isFetching } = useCategory(country, category);
 
 	return (
 		<Wrapper>
@@ -28,9 +29,9 @@ const Category = ({ route, navigation }) => {
 				Top news from <S.Span>{country}</S.Span>
 			</S.Headline>
 			{status === 'loading' || isFetching ? (
-				<Text>Loading...</Text>
+				<Loading />
 			) : status === 'error' ? (
-				<Text>Error</Text>
+				<Error />
 			) : (
 				<CardGrid news={data.articles} />
 			)}

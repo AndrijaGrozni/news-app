@@ -16,7 +16,7 @@ import {
 } from '../settings/images';
 
 const iconMap = {
-	TopNews: {
+	News: {
 		DEFAULT: newsWhite,
 		FOCUSED: news
 	},
@@ -55,7 +55,7 @@ const HomeNavigator = () => {
 				}
 			})}
 		>
-			<Tab.Screen name="TopNews" component={TopNewsScreen} />
+			<Tab.Screen name="News" component={TopNewsScreen} />
 			<Tab.Screen name="Categories" component={CategoriesNavigator} />
 			<Tab.Screen name="Search" component={SearchScreen} />
 		</Tab.Navigator>

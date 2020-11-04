@@ -11,7 +11,7 @@ export const Input = styled.TextInput`
 	flex-shrink: 0;
 	border: none;
 	border-radius: 0;
-	background: rgb(229, 229, 234);
+	background: ${({ theme }) => theme.brandGray};
 	color: ${({ theme }) => theme.textPrimary};
 	font-size: 16px;
 	line-height: 20px;

@@ -22,3 +22,12 @@ export const Headline = styled(Heading)`
 export const Span = styled.Text`
 	text-transform: uppercase;
 `;
+
+export const EmptySearch = styled.Text`
+	width: 100%;
+	height: 100%;
+	background-color: ${({ theme }) => theme.brandLight};
+	padding-top: 30px;
+	min-height: 100px;
+	text-align: center;
+`;

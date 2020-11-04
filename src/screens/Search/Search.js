@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { Text } from 'react-native';
 import Wrapper from '../../UI/Wrapper/Wrapper';
 import Header from '../../components/Header/Header';
 import CardGrid from '../../components/CardGrid/CardGrid';
 import Input from '../../UI/Input/Input';
+import Paragraph from '../../UI/Paragraph/Paragraph';
+import Loading from '../../UI/Loading/Loading';
+import Error from '../../UI/Error/Error';
 import useSearch from '../../hooks/useSearch';
 import { AppContext } from '../../context/AppProvider';
 import * as S from './styles';
@@ -27,13 +29,18 @@ const Search = () => {
 					placeholder="search..."
 				/>
 			</S.SearchHeader>
-
-			{status === 'loading' || isFetching ? (
-				<Text>Loading...</Text>
-			) : status === 'error' ? (
-				<Text color="red">Error</Text>
+			{!keyWord ? (
+				<S.EmptySearch>No recent searches</S.EmptySearch>
 			) : (
-				<CardGrid news={data.articles} />
+				<>
+					{status === 'loading' || isFetching ? (
+						<Loading />
+					) : status === 'error' ? (
+						<Error />
+					) : (
+						<CardGrid news={data.articles} />
+					)}
+				</>
 			)}
 		</Wrapper>
 	);
