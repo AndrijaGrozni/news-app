@@ -14,17 +14,7 @@ const Card = ({
 	return (
 		<S.Card width={width} height={height} fullWidth={fullWidth}>
 			<S.CardInner>
-				{image !== '' && (
-					<S.Thumbnail
-						resizeMode="cover"
-						source={{
-							uri: `${
-								image ||
-								'https://reactnative.dev/img/tiny_logo.png'
-							}`
-						}}
-					/>
-				)}
+				<S.Thumbnail source={image} />
 				<S.CardTitle size={3} numberOfLines={3}>
 					{title}
 				</S.CardTitle>

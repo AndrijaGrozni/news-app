@@ -5,7 +5,7 @@ const AppDispatchContext = createContext(undefined);
 
 const AppProvider = ({ children }) => {
 	const [state, setState] = useState({
-		country: 'us',
+		country: 'gb',
 		countries: [
 			{ label: 'GB', value: 'gb', icon: null },
 			{ label: 'US', value: 'us', icon: null }

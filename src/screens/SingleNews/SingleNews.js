@@ -18,17 +18,7 @@ const SingleNews = ({ route, navigation }) => {
 				dropdownDisabled={true}
 			/>
 			<Container contentContainerStyle={contentContainerStyleOverride}>
-				{urlToImage && (
-					<S.Cover
-						resizeMode="cover"
-						source={{
-							uri: `${
-								urlToImage ||
-								'https://reactnative.dev/img/tiny_logo.png'
-							}`
-						}}
-					/>
-				)}
+				<S.Cover source={urlToImage} />
 				<S.Headline size={1}>{title}</S.Headline>
 				<S.ContentInner>
 					<Paragraph>{description}</Paragraph>

@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 import Heading from '../Heading/Heading';
 import Paragraph from '../Paragraph/Paragraph';
 import Button from '../Button/Button';
+import Image from '../Image/Image';
 
 export const Card = styled.View`
 	width: ${(props) => (!props.fullWidth ? 47 : 100)}%;
@@ -36,7 +37,7 @@ export const CardDescription = styled(Paragraph)`
 	text-align: ${(props) => (!props.fullWidth ? 'left' : 'center')};
 `;
 
-export const Thumbnail = styled.Image`
+export const Thumbnail = styled(Image)`
 	width: 100%;
 	background-color: #eff1f3;
 	height: ${(props) => (!props.fullWidth ? 150 : 100)}px;
