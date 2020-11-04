@@ -8,3 +8,4 @@ export const search = require('./search.png');
 export const searchWhite = require('./search-white.png');
 export const backArrow = require('./back-arrow.png');
 export const errorIcon = require('./error.png');
+export const arrow = require('./right-arrow.png');

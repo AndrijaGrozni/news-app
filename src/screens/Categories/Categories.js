@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
+import { FlatList } from 'react-native';
 import Wrapper from '../../UI/Wrapper/Wrapper';
 import Header from '../../components/Header/Header';
-import Container from '../../UI/Container/Container';
 import CardSlider from '../../components/CardSlider/CardSlider';
 import { AppContext } from '../../context/AppProvider';
 import * as S from './styles';
@@ -16,15 +16,15 @@ const Categories = () => {
 			<S.Headline size={1}>
 				Top 5 news from <S.Span>{country}</S.Span>
 			</S.Headline>
-			<Container contentContainerStyle={contentContainerStyleOverride}>
-				{categories.map((category) => (
-					<CardSlider
-						key={category.value}
-						country={country}
-						category={category.value}
-					/>
-				))}
-			</Container>
+			<S.Content>
+				<FlatList
+					data={categories}
+					keyExtractor={(item) => item.value}
+					renderItem={({ item }) => (
+						<CardSlider country={country} category={item.value} />
+					)}
+				/>
+			</S.Content>
 		</Wrapper>
 	);
 };
@@ -34,9 +34,3 @@ Categories.propTypes = {};
 Categories.defaultProps = {};
 
 export default Categories;
-
-const contentContainerStyleOverride = {
-	padding: 0,
-	backgroundColor: 'white',
-	minHeight: '100%'
-};

@@ -15,3 +15,8 @@ export const Headline = styled(Heading)`
 export const Span = styled.Text`
 	text-transform: uppercase;
 `;
+
+export const Content = styled.View`
+	flex: 1;
+	background-color: white;
+`;

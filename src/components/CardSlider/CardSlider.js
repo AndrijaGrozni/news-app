@@ -1,29 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import * as navigation from '../../navigation/RootNavigation';
+import Accordion from '../../UI/Accordion/Accordion';
 import Slider from '../../UI/Slider/Slider';
 import Card from '../../UI/Card/Card';
 import Loading from '../../UI/Loading/Loading';
 import Error from '../../UI/Error/Error';
-import * as S from './styles';
 import useCategories from '../../hooks/useCategories';
 
 const CardSlider = ({ country, category }) => {
 	const { status, data, isFetching } = useCategories(country, category, 5);
 
 	return (
-		<S.SlidderOutter>
-			<TouchableOpacity
-				onPress={() =>
-					navigation.navigate('Category', {
-						category
-					})
-				}
-			>
-				<S.Headline size={1}>{category}</S.Headline>
-			</TouchableOpacity>
-
+		<Accordion
+			headline={category}
+			navigate={() =>
+				navigation.navigate('Category', {
+					category
+				})
+			}
+		>
 			{status === 'loading' || isFetching ? (
 				<Loading />
 			) : status === 'error' ? (
@@ -47,7 +43,7 @@ const CardSlider = ({ country, category }) => {
 					)}
 				/>
 			)}
-		</S.SlidderOutter>
+		</Accordion>
 	);
 };
 
