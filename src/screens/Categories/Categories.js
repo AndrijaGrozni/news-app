@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { FlatList } from 'react-native';
 import Wrapper from '../../UI/Wrapper/Wrapper';
 import Header from '../../components/Header/Header';
@@ -13,8 +14,11 @@ const Categories = () => {
 	return (
 		<Wrapper>
 			<Header title="Categories" />
-			<S.Headline size={1}>
-				Top 5 news from <S.Span>{country}</S.Span>
+			<S.Headline size={2}>
+				<FormattedMessage
+					id="app.screens.header.categories"
+					values={{ country }}
+				/>
 			</S.Headline>
 			<S.Content>
 				<FlatList

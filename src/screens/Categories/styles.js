@@ -10,9 +10,6 @@ export const Headline = styled(Heading)`
 	width: 100%;
 	z-index: 2;
 	text-align: center;
-`;
-
-export const Span = styled.Text`
 	text-transform: uppercase;
 `;
 

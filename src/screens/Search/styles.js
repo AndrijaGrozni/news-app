@@ -14,12 +14,9 @@ export const SearchHeader = styled.View`
 
 export const Headline = styled(Heading)`
 	color: ${({ theme }) => theme.textPrimary};
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	width: 100%;
 	text-align: center;
-`;
-
-export const Span = styled.Text`
 	text-transform: uppercase;
 `;
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useIntl } from 'react-intl';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from '../UI/Icon/Icon';
 // navigators
@@ -33,6 +34,8 @@ const iconMap = {
 const Tab = createBottomTabNavigator();
 
 const HomeNavigator = () => {
+	const intl = useIntl();
+
 	return (
 		<Tab.Navigator
 			tabBarOptions={{
@@ -45,7 +48,9 @@ const HomeNavigator = () => {
 				}
 			}}
 			screenOptions={({ route }) => ({
-				tabBarLabel: `${route.name}`,
+				tabBarLabel: intl.formatMessage({
+					id: `app.containers.Navigation.link.${route.name}`
+				}),
 				tabBarIcon: ({ focused }) => {
 					const icon = focused
 						? iconMap[route.name].FOCUSED

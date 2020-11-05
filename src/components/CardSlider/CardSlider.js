@@ -26,7 +26,7 @@ const CardSlider = ({ country, category }) => {
 				<Error />
 			) : (
 				<Slider
-					cards={data}
+					cards={data.articles}
 					renderCards={({ item }) => (
 						<Card
 							fullWidth

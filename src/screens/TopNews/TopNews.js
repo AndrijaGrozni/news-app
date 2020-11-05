@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Text } from 'react-native';
+import { FormattedMessage } from 'react-intl';
 import Wrapper from '../../UI/Wrapper/Wrapper';
 import Header from '../../components/Header/Header';
 import CardGrid from '../../components/CardGrid/CardGrid';
@@ -17,8 +17,11 @@ const TopNews = () => {
 	return (
 		<Wrapper>
 			<Header title="News App" />
-			<S.Headline size={1}>
-				Top news from <S.Span>{country}</S.Span>
+			<S.Headline size={2}>
+				<FormattedMessage
+					id="app.screens.header.topNews"
+					values={{ country }}
+				/>
 			</S.Headline>
 			{status === 'loading' || isFetching ? (
 				<Loading />

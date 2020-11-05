@@ -1,0 +1,18 @@
+{
+	"app.global.name": "News App",
+
+	"app.global.button.readMore": "Read More",
+	"app.global.input.placeholder": "search by word...",
+
+	"app.global.loading": "Loading...",
+	"app.global.error": "Error. No data.",
+	"app.global.search.empty": "No recent searches",
+
+	"app.containers.Navigation.link.News": "News",
+	"app.containers.Navigation.link.Categories": "Categories",
+	"app.containers.Navigation.link.Search": "Search",
+
+	"app.screens.header.topNews": "Top news from {country}",
+	"app.screens.header.categories": "Top 5 news from {country}",
+	"app.screens.header.search": "Search for news in {country}"
+}

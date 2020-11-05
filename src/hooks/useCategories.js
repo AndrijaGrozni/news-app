@@ -4,10 +4,10 @@ import axios from 'axios';
 
 const getCategories = async (_, country, category, limit) => {
 	const { data } = await axios.get(
-		`${Config.APP_API}?country=${country}&category=${category}&apiKey=${Config.APP_API_KEY}`
+		`${Config.APP_API}?country=${country}&category=${category}&apiKey=${Config.APP_API_KEY}&pageSize=${limit}`
 	);
 
-	return data.articles?.splice(0, limit);
+	return data;
 };
 
 export default function usePosts(country, category, limit) {
