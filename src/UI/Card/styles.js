@@ -8,7 +8,7 @@ export const Card = styled.View`
 	width: ${(props) => (!props.fullWidth ? 47 : 100)}%;
 	height: auto;
 	min-height: ${(props) => (!props.fullWidth ? 2 : 280)}px;
-	background-color: ${({ theme }) => theme.brandLight};
+	background-color: ${({ theme }) => theme.brandDark};
 	border-radius: 10px;
 	padding: 0;
 	margin: 0;
@@ -23,7 +23,7 @@ export const CardInner = styled.View`
 `;
 
 export const CardTitle = styled(Heading)`
-	padding: ${(props) => (!props.fullWidth ? 15 : 12)}px;
+	padding: ${(props) => (!props.fullWidth ? 10 : 15)}px;
 	color: ${({ theme }) => theme.textSecondary};
 	background-color: ${({ theme }) => theme.brandDark};
 	text-align: ${(props) => (!props.fullWidth ? 'left' : 'center')};
@@ -32,9 +32,9 @@ export const CardTitle = styled(Heading)`
 
 export const CardDescription = styled(Paragraph)`
 	margin: 0 auto;
-	padding: 10px 10px 0 10px;
-	overflow: hidden;
+	padding: 0 10px 0 10px;
 	text-align: ${(props) => (!props.fullWidth ? 'left' : 'center')};
+	color: ${({ theme }) => theme.brandLight};
 `;
 
 export const Thumbnail = styled(Image)`
@@ -44,8 +44,8 @@ export const Thumbnail = styled(Image)`
 `;
 
 export const CardButton = styled(Button)`
-	width: 100%;
+	width: auto;
 	padding: ${(props) => (!props.fullWidth ? 10 : 12)}px;
-	margin-bottom: 2px;
-	margin-top: auto;
+	margin-bottom: 5px;
+	margin-top: 5px;
 `;

@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import { Text } from 'react-native';
 import Icon from '../../UI/Icon/Icon';

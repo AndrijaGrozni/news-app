@@ -15,11 +15,11 @@ const Card = ({
 		<S.Card width={width} height={height} fullWidth={fullWidth}>
 			<S.CardInner>
 				<S.Thumbnail source={image} />
-				<S.CardTitle size={3} numberOfLines={3}>
+				<S.CardTitle size={2} numberOfLines={3}>
 					{title}
 				</S.CardTitle>
 				{description !== '' && (
-					<S.CardDescription medium numberOfLines={3}>
+					<S.CardDescription small numberOfLines={3}>
 						{description}
 					</S.CardDescription>
 				)}
