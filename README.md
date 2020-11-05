@@ -58,7 +58,14 @@ Test:
 $ npm run android
 ```
 
-## Tech Stack
+### API
+
+endpoint: [https://newsapi.org/v2/top-headlines](https://newsapi.org/v2/top-headlines)
+
+free and API key - limited to 100 daily requests
+
+
+### Tech Stack
 
 -   React 16.9.0
 -   React Native 0.61.5
